@@ -37,5 +37,6 @@
   "jest": {
     "preset": "react-native"
   },
-  "private": true
+  "private": true,
+  "proxy": "http://localhost:5000/"
 }

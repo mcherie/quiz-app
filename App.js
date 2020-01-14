@@ -39,8 +39,31 @@ import { QuestionScreen } from "./src/screens/question"
 // export default App;
 
 export default class App extends Component {
+
+  state = { data: null };
+
+  componentDidMount() {
+    // Call fetch function below once component mounts
+    this.callBackendAPI()
+      .then(res => this.setState({ data: res.express }))
+      .catch(err => console.log("You got an error here", err))
+  }
+
+  // Fetches GET route from the Express server
+  callBackendAPI = async () => {
+    // const response = await fetch("http://localhost:5000/express_backend");
+    const response = await fetch("http://192.168.0.14:5000/express_backend");
+    const body = await response.json();
+
+    if (response.status !== 200) {
+      throw Error("Error in callBackendAPI func", body.message)
+    }
+    return body;
+  }
+
+
   render() {
-    return <AppContainer /> 
+      return <AppContainer screenProps={`${this.state.data}`}/>  
   }
 }
 

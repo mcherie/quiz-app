@@ -1,9 +1,9 @@
 {
   "expoServerPort": 19000,
-  "expoServerNgrokUrl": "https://b6-a39.anonymous.quizapp.exp.direct",
-  "packagerNgrokUrl": "https://packager.b6-a39.anonymous.quizapp.exp.direct",
-  "ngrokPid": 48853,
+  "expoServerNgrokUrl": "https://b6-a39.anonymous.client.exp.direct",
+  "packagerNgrokUrl": "https://packager.b6-a39.anonymous.client.exp.direct",
+  "ngrokPid": 7573,
   "devToolsPort": 19002,
-  "packagerPort": 19004,
-  "packagerPid": 48843
+  "packagerPort": 19001,
+  "packagerPid": 7559
 }
