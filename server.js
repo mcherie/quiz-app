@@ -3,12 +3,11 @@ const app = express();
 require("dotenv").config();
 const port = process.env.PORT || 5000;
 
-const firebase = require("firebase-admin")
-// const serviceAccount = require("./serviceAccountKey.json")
-
 // console.log that server is running
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
+const firebase = require("firebase-admin")
+// const serviceAccount = require("./serviceAccountKey.json")
 firebase.initializeApp({
   credential: firebase.credential.cert({
     type: process.env.FIREBASE_TYPE,
@@ -25,30 +24,46 @@ firebase.initializeApp({
   databaseURL: "https://quizapp-f9dec.firebaseio.com"
 })
 
+const db = firebase.firestore()
+
 // create a GET route
 app.get("/express_backend", (req, res) => {
-  res.send({ express: "BACKEND EXPRESS IS CONNECTED TO REACT"})
+  res.send({ express: "Backend Express is connected to React"})
 });
 
 app.get("/question", (req, res) => {
-  res.send({ express: "How old are you?"})
+  // res.send({ express: "How old are you?"})
+  db.collection("questions").get()
+  .then(querySnapshot => {
+    const allQuestions = [];
+    querySnapshot.forEach(doc => {
+      allQuestions.push(doc.data())
+    })
+    console.log("allQuestions is:" , allQuestions)
+
+    return allQuestions;
+  })
+  .then(data => res.send(data))
+  .catch(err => Error("Error fetching questions: ", err))
+
 });
 
 const questions = [
-  {"What is the color of the sky?": {
+  {id: 1,
+    question: "What is the color of the sky?",
     a: "Blue",
     b: "Red",
     c: "Green",
     d: "Purple"
-  }},
-  {"What is the shape of the moon?": {
+  },
+  {id: 2,
+    question: "What is the shape of the moon?",
     a: "Square",
     b: "Triangle",
     c: "Round",
     d: "Hexagon"
-  }}
+  }
 ]
-const db = firebase.firestore()
 
 const insertQuestionstoDb = () => {
   questions.forEach(item => {
@@ -56,4 +71,5 @@ const insertQuestionstoDb = () => {
     .catch(err => Error("Error inserting to db: ", err))
   })
 }
-insertQuestionstoDb()
+// insertQuestionstoDb()
+
