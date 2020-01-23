@@ -52,7 +52,7 @@ export default class App extends Component {
   // Fetches GET route from the Express server
   callBackendAPI = async () => {
     // const response = await fetch("http://localhost:5000/express_backend");
-    const response = await fetch("http://192.168.0.14:5000/express_backend");
+    const response = await fetch("http://192.168.0.10:5000/express_backend");
     const body = await response.json(); 
 
     if (response.status !== 200) {
