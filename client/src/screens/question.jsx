@@ -5,7 +5,7 @@ import {TouchableOpacity} from "react-native-gesture-handler"
 
 export const QuestionScreen = () => {
 
-  const [question, setQuestion] = useState([])
+  const [questions, setQuestions] = useState([])
 
   // async function fetchQuestion() {
   //   const newQuestion = await fetch("http://192.168.0.14:5000/question")
@@ -19,9 +19,9 @@ export const QuestionScreen = () => {
   // }
 
   useEffect(() => {
-    fetch("http://192.168.0.10:5000/question")
+    fetch("http://192.168.0.13:5000/question")
     .then(res => res.json())
-    .then(data => setQuestion(data))
+    .then(data => setQuestions(data))
     .catch(err => Error("Error fetching question", err))
   }, [0])
 
@@ -31,12 +31,12 @@ let firstQuestionB;
 let firstQuestionC;
 let firstQuestionD;
 
-  if (question.length > 0) {
-    console.log("question is:", question)
-    const firstObject = question[0]
-    console.log("first object is:", firstObject)
+  if (questions.length > 0) {
+    // console.log("question is:", questions)
+    const firstObject = questions[0]
+    // console.log("first object is:", firstObject)
     firstQuestion = firstObject["question"]
-    console.log("first question is:", firstQuestion)
+    // console.log("first question is:", firstQuestion)
     firstQuestionA = firstObject["a"]
     firstQuestionB = firstObject["b"]
     firstQuestionC = firstObject["c"]

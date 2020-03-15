@@ -54,14 +54,16 @@ const questions = [
     a: "Blue",
     b: "Red",
     c: "Green",
-    d: "Purple"
+    d: "Purple",
+    answer: "Blue",
   },
   {id: 2,
     question: "What is the shape of the moon?",
     a: "Square",
     b: "Triangle",
     c: "Round",
-    d: "Hexagon"
+    d: "Hexagon",
+    answer: "Round",
   }
 ]
 
