@@ -19,7 +19,8 @@ export const QuestionScreen = () => {
   // }
 
   useEffect(() => {
-    fetch("http://192.168.0.13:5000/question")
+    // fetch("http://192.168.0.13:5000/question")
+        fetch("http://192.168.0.11:5000/question") // P's place's IP
     .then(res => res.json())
     .then(data => setQuestions(data))
     .catch(err => Error("Error fetching question", err))
