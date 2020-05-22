@@ -33,7 +33,7 @@ app.get("/express_backend", (req, res) => {
 
 app.get("/question", (req, res) => {
   // res.send({ express: "How old are you?"})
-  db.collection("questions").get()
+  db.collection("Driving").get()
   .then(querySnapshot => {
     const allQuestions = [];
     querySnapshot.forEach(doc => {
@@ -69,7 +69,7 @@ const questions = [
 
 const insertQuestionstoDb = () => {
   questions.forEach(item => {
-    db.collection("questions").doc().set(item)
+    db.collection("Driving").doc(`${item.id}`).set(item)
     .catch(err => Error("Error inserting to db: ", err))
   })
 }
