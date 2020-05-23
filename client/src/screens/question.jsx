@@ -3,10 +3,10 @@ import {Alert, Text, View, StyleSheet} from "react-native"
 import {TouchableOpacity} from "react-native-gesture-handler"
 
 
-export const QuestionScreen = () => {
+export const QuestionScreen = ({navigation}) => {
 
   const [questions, setQuestions] = useState([])
-  const [activeQuestion, setActiveQuestion] = useState(0)
+  const [activeQuestion, setActiveQuestion] = useState(18)
 
   useEffect(() => {
     // fetch("http://192.168.0.13:5000/question")
@@ -21,24 +21,35 @@ export const QuestionScreen = () => {
   let correctAnswer
   let explanation
 
-  let correctAnswerCount = 0
+  let totalQuestions
+  let numberOfQuesAnswered = 1
+  // let correctAnswerCount = 0
 
   if (questions.length > 0) {
 
-    const currentQuestion = questions[activeQuestion * 1]
+    totalQuestions = questions.length
 
-    question = currentQuestion["question"]
-    answers = currentQuestion["answers"] // now an array
-    correctAnswer = currentQuestion["correctAnswer"]
-    explanation = currentQuestion["explanation"] ? currentQuestion["explanation"] : ""
+    if (activeQuestion < totalQuestions) {
+      const currentQuestion = questions[activeQuestion]
+
+      question = currentQuestion["question"]
+      answers = currentQuestion["answers"] // now an array
+      correctAnswer = currentQuestion["correctAnswer"]
+      explanation = currentQuestion["explanation"] ? currentQuestion["explanation"] : ""
+    } else {
+      navigation.navigate("Home")
+    }
+
   }
 
   const selectAnswer = (chosenAnswer) => {
     if (chosenAnswer == correctAnswer) {
-      correctAnswerCount++
-      Alert.alert("CORRECT ✔️", `${explanation}`, [
+      // correctAnswerCount++
+      numberOfQuesAnswered++
+      Alert.alert("CORRECT ✔️", `${explanation}`, 
+      [
         {text: 'OK', onPress: () => console.log('OK Pressed')},
-        {text: 'Next', onPress: () => setActiveQuestion(activeQuestion+1)},
+        {text: 'Next', onPress: () => setActiveQuestion((activeQuestion * 1) + 1)},
       ],
       { cancelable: false })
     } else {
