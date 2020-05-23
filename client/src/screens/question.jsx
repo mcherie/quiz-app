@@ -19,25 +19,30 @@ export const QuestionScreen = () => {
   let question;
   let answers
   let correctAnswer
+  let explanation
+
+  let correctAnswerCount = 0
 
   if (questions.length > 0) {
 
-    const currentQuestion = questions[activeQuestion]
+    const currentQuestion = questions[activeQuestion * 1]
 
     question = currentQuestion["question"]
     answers = currentQuestion["answers"] // now an array
     correctAnswer = currentQuestion["correctAnswer"]
+    explanation = currentQuestion["explanation"] ? currentQuestion["explanation"] : ""
   }
 
   const selectAnswer = (chosenAnswer) => {
     if (chosenAnswer == correctAnswer) {
-      Alert.alert("CORRECT!", `${chosenAnswer} answer was chosen. ✔️`, [
+      correctAnswerCount++
+      Alert.alert("CORRECT ✔️", `${explanation}`, [
         {text: 'OK', onPress: () => console.log('OK Pressed')},
-        {text: 'Next', onPress: () => setActiveQuestion(+1)},
+        {text: 'Next', onPress: () => setActiveQuestion(activeQuestion+1)},
       ],
       { cancelable: false })
     } else {
-      alert(`${chosenAnswer} answer was chosen. Incorrect.`)
+      alert(`Answer chosen was INCORRECT.`)
     }
   }
 
