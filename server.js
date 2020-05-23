@@ -39,7 +39,7 @@ app.get("/question", (req, res) => {
     querySnapshot.forEach(doc => {
       allQuestions.push(doc.data())
     })
-    console.log("allQuestions is:" , allQuestions)
+    // console.log("allQuestions is:" , allQuestions)
 
     return allQuestions;
   })
@@ -49,21 +49,15 @@ app.get("/question", (req, res) => {
 });
 
 const questions = [
-  {id: 1,
-    question: "What is the color of the sky?",
-    a: "Blue",
-    b: "Red",
-    c: "Green",
-    d: "Purple",
-    answer: "Blue",
+  {id: 1, 
+    question: "What is the color of the sky?", 
+    answers: ["Blue", "Red", "Green", "Purple"],
+    correctAnswer: "Blue",
   },
   {id: 2,
     question: "What is the shape of the moon?",
-    a: "Square",
-    b: "Triangle",
-    c: "Round",
-    d: "Hexagon",
-    answer: "Round",
+    answers: ["Square", "Triangle", "Round", "Hexagon"],
+    correctAnswer: "Round",
   }
 ]
 
@@ -73,5 +67,6 @@ const insertQuestionstoDb = () => {
     .catch(err => Error("Error inserting to db: ", err))
   })
 }
-// insertQuestionstoDb()
+
+insertQuestionstoDb()
 
