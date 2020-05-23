@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react"
-import {Text, View, StyleSheet} from "react-native"
+import {Alert, Text, View, StyleSheet} from "react-native"
 import {TouchableOpacity} from "react-native-gesture-handler"
 
 
@@ -30,7 +30,15 @@ export const QuestionScreen = () => {
   }
 
   const selectAnswer = (chosenAnswer) => {
-    alert(`${chosenAnswer} answer was chosen`)
+    if (chosenAnswer == correctAnswer) {
+      Alert.alert("CORRECT!", `${chosenAnswer} answer was chosen. ✔️`, [
+        {text: 'OK', onPress: () => console.log('OK Pressed')},
+        {text: 'Next', onPress: () => setActiveQuestion(+1)},
+      ],
+      { cancelable: false })
+    } else {
+      alert(`${chosenAnswer} answer was chosen. Incorrect.`)
+    }
   }
 
 
