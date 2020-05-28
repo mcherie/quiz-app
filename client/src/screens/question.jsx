@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react"
-import {Alert, Text, View, StyleSheet, Image, ScrollView} from "react-native"
+import {Alert, Text, View, StyleSheet, Image, ScrollView, Button} from "react-native"
 import {TouchableOpacity} from "react-native-gesture-handler"
 
 import { listOfQuestions } from "../assets/listOfQuestions"
@@ -45,8 +45,6 @@ export const QuestionScreen = ({navigation}) => {
       correctAnswer = currentQuestion["correctAnswer"]
       explanation = currentQuestion["explanation"] ? currentQuestion["explanation"] : ""
       image = currentQuestion["image"] ? currentQuestion["image"] : null
-
-      console.log("image is", image)
     } else {
       navigation.navigate("Home")
     }
@@ -70,11 +68,12 @@ export const QuestionScreen = ({navigation}) => {
 
 
   return (
-    <ScrollView>
+    <ScrollView >
+      <Button style= {{alignSelf: "left"}} title="Previous question" onPress={() => setActiveQuestion((activeQuestion * 1) - 1)} />
 
       <Text style={styles.questionTitle}>{question ? `${question}` : `Fetching question...`}</Text>
 
-      {image ? <Image style={{resizeMode: "center", top: 0}} source={image}/> : null}
+      {image ? <Image style={{resizeMode: "contain", width: 200, height: 200, alignSelf: "center"}} source={image}/> : null}
       
 
       {answers 
@@ -97,7 +96,7 @@ const styles = StyleSheet.create({
     backgroundColor: "aquamarine", 
     borderRadius: 2, 
     borderWidth: 0.5,
-    marginBottom: 30,
+    marginBottom: 23,
     textAlign: "center",
     fontSize: 20,
   },
