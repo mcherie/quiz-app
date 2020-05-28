@@ -31,22 +31,26 @@ app.get("/express_backend", (req, res) => {
   res.send({ express: "Backend Express is connected to React"})
 });
 
+// app.get("/question", (req, res) => {
+//   // res.send({ express: "How old are you?"})
+//   db.collection("Driving").get()
+//   .then(querySnapshot => {
+//     const allQuestions = [];
+//     querySnapshot.forEach(doc => {
+//       allQuestions.push(doc.data())
+//     })
+//     // console.log("allQuestions is:" , allQuestions)
+
+//     return allQuestions;
+//   })
+//   .then(data => res.send(data))
+//   .catch(err => Error("Error fetching questions: ", err))
+
+// });
+
 app.get("/question", (req, res) => {
-  // res.send({ express: "How old are you?"})
-  db.collection("Driving").get()
-  .then(querySnapshot => {
-    const allQuestions = [];
-    querySnapshot.forEach(doc => {
-      allQuestions.push(doc.data())
-    })
-    // console.log("allQuestions is:" , allQuestions)
-
-    return allQuestions;
-  })
-  .then(data => res.send(data))
-  .catch(err => Error("Error fetching questions: ", err))
-
-});
+  res.send(questions)
+})
 
 const questions = [
   {id: 1, 
@@ -246,14 +250,25 @@ const questions = [
     correctAnswer: "Pull to the right as far as possible and stop",
     explanation: "If you hear the siren of an emergency vehicle, pull to the right as far as possible and stop. Don't worry; other drivers will do the same."
   },
+  {id: 21, 
+    question: "What does this road sign mean", 
+    answers: [
+      "Idling permitted", 
+      "No stopping for more than 3 minutes", 
+      "No smoking", 
+      "No idling for more than 3 minutes"],
+    correctAnswer: "No idling for more than 3 minutes",
+    explanation: "",
+    image: src="./assets/no-idling.svg"
+  },
 ]
 
 const insertQuestionstoDb = () => {
   questions.forEach(item => {
-    db.collection("Driving").doc(`${item.id}`).set(item)
+    db.collection("Driving").doc(`${item.id}`).delete().set(item)
     .catch(err => Error("Error inserting to db: ", err))
   })
 }
 
-insertQuestionstoDb()
+// insertQuestionstoDb()
 

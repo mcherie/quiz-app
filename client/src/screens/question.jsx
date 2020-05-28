@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react"
-import {Alert, Text, View, StyleSheet} from "react-native"
+import {Alert, Text, View, StyleSheet, Image} from "react-native"
 import {TouchableOpacity} from "react-native-gesture-handler"
+
+import { listOfQuestions } from "../assets/listOfQuestions"
 
 
 export const QuestionScreen = ({navigation}) => {
@@ -9,14 +11,20 @@ export const QuestionScreen = ({navigation}) => {
   const [activeQuestion, setActiveQuestion] = useState(18)
 
   useEffect(() => {
-    // fetch("http://192.168.0.13:5000/question")
-    fetch("http://192.168.0.11:5000/question") // P's place's IP
-      .then(res => res.json())
-      .then(data => setQuestions(data))
-      .catch(err => Error("Error fetching question", err))
+    // fetch("http://192.168.0.12:5000/question")
+    // // fetch("http://192.168.0.11:5000/question") // P's place's IP
+    //   .then(res => res.json())
+    //   .then(data => setQuestions(data))
+    //   .catch(err => Error("Error fetching question", err))
+    setQuestions(listOfQuestions)
   }, [0])
+ 
+  // let allQuestions = listOfQuestions
+
+  // console.log("allQuestions is", allQuestions)
 
   let question;
+  let image
   let answers
   let correctAnswer
   let explanation
@@ -36,6 +44,7 @@ export const QuestionScreen = ({navigation}) => {
       answers = currentQuestion["answers"] // now an array
       correctAnswer = currentQuestion["correctAnswer"]
       explanation = currentQuestion["explanation"] ? currentQuestion["explanation"] : ""
+      image = currentQuestion["image"] ? currentQuestion["image"] : null
     } else {
       navigation.navigate("Home")
     }
@@ -63,7 +72,10 @@ export const QuestionScreen = ({navigation}) => {
 
       <Text style={styles.questionTitle}>{question ? `${question}` : `Fetching question...`}</Text>
 
-      {question 
+      {image ? <Image style={{resizeMode: "stretch", marginLeft: 100}} source={require("../assets/no-idling.png")}/> : null}
+      
+
+      {answers 
       ? answers.map((eachOption, idx) => {
         return (
           <TouchableOpacity style={styles.options} onPress={()=>selectAnswer(eachOption)} key={idx}>
