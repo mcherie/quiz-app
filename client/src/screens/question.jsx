@@ -73,7 +73,7 @@ export const QuestionScreen = ({navigation}) => {
 
       <Text style={styles.questionTitle}>{question ? `${question}` : `Fetching question...`}</Text>
 
-      {image ? <Image style={{resizeMode: "contain", width: 200, height: 200, alignSelf: "center"}} source={image}/> : null}
+      {image ? <Image style={{resizeMode: "contain", height: 220, alignSelf: "center"}} source={image}/> : null}
       
 
       {answers 
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginTop: 20,
     marginRight: 40,
-    marginBottom: 10,
+    // marginBottom: ,
     marginLeft: 40,
     // fontSize: 30,
   },

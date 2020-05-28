@@ -240,7 +240,117 @@ export const listOfQuestions = [
       explanation: "",
       image: require("./../assets/sharp-turn.png")
     },    
-    // {id: , 
+    {id: 25, 
+      question: "What does this sign mean?", 
+      answers: [
+        "Yield right-of-way", 
+        "Slow moving vehicle", 
+        "Dead end street ahead", 
+        "Stop sign ahead"],
+      correctAnswer: "Slow moving vehicle",
+      explanation: "",
+      image: require("./../assets/slow.png")
+    },
+    {id: 26, 
+      question: "What does this road sign mean?", 
+      answers: [
+        "Steep hill ahead", 
+        "Passing not allowed", 
+        "Right lane ends", 
+        "Hidden intersection ahead"],
+      correctAnswer: "Passing not allowed",
+      explanation: "",
+      image: require("./../assets/no-overtaking.png")
+    },
+    {id: 27, 
+      question: "What does this road sign mean?", 
+      answers: [
+        "You may park in the designated area during the posted times", 
+        "You may not park between the signs during the posted times", 
+        "Only weekend parking is allowed", 
+        "No parking is allowed"],
+      correctAnswer: "You may park in the designated area during the posted times",
+      explanation: "",
+      image: require("./../assets/park-times.png")
+    },
+    {id: 28, 
+      question: "What does this road sign mean?", 
+      answers: [
+        "Snowmobiles may use this road", 
+        "Only snowmobiles may park here", 
+        "There is a snowmobile repair shop ahead", 
+        "Snowmobiles may not use this road"],
+      correctAnswer: "Snowmobiles may use this road",
+      explanation: "",
+      image: require("./../assets/snowmobiles.png")
+    },
+        {id: 29, 
+      question: "What does this road sign mean?", 
+      answers: [
+        "Stop sign 150 metres (500 feet) ahead", 
+        "Traffic signal ahead", 
+        "Bump 120 metres (400 feet) ahead", 
+        "Railway crossing ahead"],
+      correctAnswer: "Traffic signal ahead",
+      explanation: "",
+      image: require("./../assets/traffic-signal-ahead.png")
+    },
+        {id: 30, 
+      question: "What does this road sign mean?", 
+      answers: [
+        "U-turn not permitted", 
+        "No right turn permitted", 
+        "Road slippery when wet", 
+        "No left turn permitted"],
+      correctAnswer: "U-turn not permitted",
+      explanation: "",
+      image: require("./../assets/no-u-turn.png")
+    },
+        {id: 31, 
+      question: "What does this road sign mean?", 
+      answers: [
+        "There is a right turn ahead", 
+        "Drivers on the side road of the intersection ahead don't have a clear view of traffic", 
+        "There are no left turns allowed", 
+        "There are no U-turns allowed"],
+      correctAnswer: "Drivers on the side road of the intersection ahead don't have a clear view of traffic",
+      explanation: "This is a warning sign showing that drivers on the side road at the intersection ahead don't have a clear view of traffic.",
+      image: require("./../assets/hidden.png")
+    },
+        {id: 31, 
+      question: "What does this road sign mean?", 
+      answers: [
+        "Watch for traffic signals", 
+        "Be cautious of pedestrians", 
+        "Do not slow down", 
+        "Do not block the intersection"],
+      correctAnswer: "Do not block the intersection",
+      explanation: "",
+      image: require("./../assets/no-block-intersection.png")
+    },
+        {id: 32, 
+      question: "What does this road sign mean?", 
+      answers: [
+        "A left turn is not allowed", 
+        "Do not drive straight through the intersection", 
+        "Going straight is allowed", 
+        "A right turn is not allowed"],
+      correctAnswer: "Do not drive straight through the intersection",
+      explanation: "",
+      image: require("./../assets/no-through.png")
+    },
+        {id: 33, 
+      question: "", 
+      answers: [
+        "Regulatory sign; reduce speed", 
+        "Construction sign to slow down and obey flagger's direction", 
+        "A construction sign replacing flagger on duty", 
+        "Warns of road work operation ahead"],
+      correctAnswer: "Warns of road work operation ahead",
+      explanation: "",
+      image: require("./../assets/road-work-ahead.png")
+    },
+        // {id: , 
     //   question: "", 
     //   answers: [
     //     "", 
@@ -249,9 +359,9 @@ export const listOfQuestions = [
     //     ""],
     //   correctAnswer: "",
     //   explanation: "",
-    //   image: "./assets/bridge.svg"
+    //   image: require("./../assets/slow.png")
     // },
-    // {id: , 
+        // {id: , 
     //   question: "", 
     //   answers: [
     //     "", 
@@ -260,9 +370,9 @@ export const listOfQuestions = [
     //     ""],
     //   correctAnswer: "",
     //   explanation: "",
-    //   image: "./assets/bridge.svg"
+    //   image: require("./../assets/slow.png")
     // },
-    // {id: , 
+        // {id: , 
     //   question: "", 
     //   answers: [
     //     "", 
@@ -271,9 +381,9 @@ export const listOfQuestions = [
     //     ""],
     //   correctAnswer: "",
     //   explanation: "",
-    //   image: "./assets/bridge.svg"
+    //   image: require("./../assets/slow.png")
     // },
-    // {id: , 
+        // {id: , 
     //   question: "", 
     //   answers: [
     //     "", 
@@ -282,6 +392,39 @@ export const listOfQuestions = [
     //     ""],
     //   correctAnswer: "",
     //   explanation: "",
-    //   image: "./assets/bridge.svg"
+    //   image: require("./../assets/slow.png")
+    // },
+        // {id: , 
+    //   question: "", 
+    //   answers: [
+    //     "", 
+    //     "", 
+    //     "", 
+    //     ""],
+    //   correctAnswer: "",
+    //   explanation: "",
+    //   image: require("./../assets/slow.png")
+    // },
+        // {id: , 
+    //   question: "", 
+    //   answers: [
+    //     "", 
+    //     "", 
+    //     "", 
+    //     ""],
+    //   correctAnswer: "",
+    //   explanation: "",
+    //   image: require("./../assets/slow.png")
+    // },
+        // {id: , 
+    //   question: "", 
+    //   answers: [
+    //     "", 
+    //     "", 
+    //     "", 
+    //     ""],
+    //   correctAnswer: "",
+    //   explanation: "",
+    //   image: require("./../assets/slow.png")
     // },
   ]
