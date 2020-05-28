@@ -205,6 +205,83 @@ export const listOfQuestions = [
         "No idling for more than 3 minutes"],
       correctAnswer: "No idling for more than 3 minutes",
       explanation: "",
-      image: "./assets/no-idling.svg"
+      image: require("./../assets/no-idling.png")
     },
+    {id: 22, 
+      question: "What does this road sign mean?", 
+      answers: [
+        "Hotel", 
+        "Airport", 
+        "Narrow road ahead", 
+        "Bridge ahead lifts or swings to allow boats to pass"],
+      correctAnswer: "Bridge ahead lifts or swings to allow boats to pass",
+      explanation: "",
+      image: require("./../assets/bridge.png")
+    },
+    {id: 23, 
+      question: "What does this road sign mean?", 
+      answers: [
+        "No parking from arrows to corner", 
+        "Lane usage sign meaning right turn only", 
+        "Lane usage sign permitting all turns, including left turns", 
+        "Advance warning of danger"],
+      correctAnswer: "Lane usage sign meaning right turn only",
+      explanation: "",
+      image: require("./../assets/right-turn-only.png")
+    },
+    {id: 24, 
+      question: "What does this road sign mean?", 
+      answers: [
+        "Keep right", 
+        "The road ends", 
+        "Traffic must exit to the right", 
+        "There is a sharp bend or turn in the road ahead"],
+      correctAnswer: "There is a sharp bend or turn in the road ahead",
+      explanation: "",
+      image: require("./../assets/sharp-turn.png")
+    },    
+    // {id: , 
+    //   question: "", 
+    //   answers: [
+    //     "", 
+    //     "", 
+    //     "", 
+    //     ""],
+    //   correctAnswer: "",
+    //   explanation: "",
+    //   image: "./assets/bridge.svg"
+    // },
+    // {id: , 
+    //   question: "", 
+    //   answers: [
+    //     "", 
+    //     "", 
+    //     "", 
+    //     ""],
+    //   correctAnswer: "",
+    //   explanation: "",
+    //   image: "./assets/bridge.svg"
+    // },
+    // {id: , 
+    //   question: "", 
+    //   answers: [
+    //     "", 
+    //     "", 
+    //     "", 
+    //     ""],
+    //   correctAnswer: "",
+    //   explanation: "",
+    //   image: "./assets/bridge.svg"
+    // },
+    // {id: , 
+    //   question: "", 
+    //   answers: [
+    //     "", 
+    //     "", 
+    //     "", 
+    //     ""],
+    //   correctAnswer: "",
+    //   explanation: "",
+    //   image: "./assets/bridge.svg"
+    // },
   ]

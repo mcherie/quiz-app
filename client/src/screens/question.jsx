@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react"
-import {Alert, Text, View, StyleSheet, Image} from "react-native"
+import {Alert, Text, View, StyleSheet, Image, ScrollView} from "react-native"
 import {TouchableOpacity} from "react-native-gesture-handler"
 
 import { listOfQuestions } from "../assets/listOfQuestions"
@@ -45,6 +45,8 @@ export const QuestionScreen = ({navigation}) => {
       correctAnswer = currentQuestion["correctAnswer"]
       explanation = currentQuestion["explanation"] ? currentQuestion["explanation"] : ""
       image = currentQuestion["image"] ? currentQuestion["image"] : null
+
+      console.log("image is", image)
     } else {
       navigation.navigate("Home")
     }
@@ -68,11 +70,11 @@ export const QuestionScreen = ({navigation}) => {
 
 
   return (
-    <View>
+    <ScrollView>
 
       <Text style={styles.questionTitle}>{question ? `${question}` : `Fetching question...`}</Text>
 
-      {image ? <Image style={{resizeMode: "stretch", marginLeft: 100}} source={require("../assets/no-idling.png")}/> : null}
+      {image ? <Image style={{resizeMode: "center", top: 0}} source={image}/> : null}
       
 
       {answers 
@@ -85,7 +87,7 @@ export const QuestionScreen = ({navigation}) => {
       })
       : <Text>"Fetching options..."</Text>}
 
-    </View>
+    </ScrollView>
   )
 }
 
@@ -95,7 +97,7 @@ const styles = StyleSheet.create({
     backgroundColor: "aquamarine", 
     borderRadius: 2, 
     borderWidth: 0.5,
-    marginBottom: 50,
+    marginBottom: 30,
     textAlign: "center",
     fontSize: 20,
   },
@@ -104,7 +106,7 @@ const styles = StyleSheet.create({
     backgroundColor: "aquamarine", 
     borderRadius: 10, 
     borderWidth: 1,
-    marginTop: 10,
+    marginTop: 20,
     marginRight: 40,
     marginBottom: 10,
     marginLeft: 40,
