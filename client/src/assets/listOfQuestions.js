@@ -317,7 +317,7 @@ export const listOfQuestions = [
       explanation: "This is a warning sign showing that drivers on the side road at the intersection ahead don't have a clear view of traffic.",
       image: require("./../assets/hidden.png")
     },
-        {id: 31, 
+        {id: 32, 
       question: "What does this road sign mean?", 
       answers: [
         "Watch for traffic signals", 
@@ -328,7 +328,7 @@ export const listOfQuestions = [
       explanation: "",
       image: require("./../assets/no-block-intersection.png")
     },
-        {id: 32, 
+        {id: 33, 
       question: "What does this road sign mean?", 
       answers: [
         "A left turn is not allowed", 
@@ -339,7 +339,7 @@ export const listOfQuestions = [
       explanation: "",
       image: require("./../assets/no-through.png")
     },
-        {id: 33, 
+        {id: 34, 
       question: "", 
       answers: [
         "Regulatory sign; reduce speed", 
@@ -350,72 +350,72 @@ export const listOfQuestions = [
       explanation: "",
       image: require("./../assets/road-work-ahead.png")
     },
-        // {id: , 
-    //   question: "", 
-    //   answers: [
-    //     "", 
-    //     "", 
-    //     "", 
-    //     ""],
-    //   correctAnswer: "",
-    //   explanation: "",
-    //   image: require("./../assets/slow.png")
-    // },
-        // {id: , 
-    //   question: "", 
-    //   answers: [
-    //     "", 
-    //     "", 
-    //     "", 
-    //     ""],
-    //   correctAnswer: "",
-    //   explanation: "",
-    //   image: require("./../assets/slow.png")
-    // },
-        // {id: , 
-    //   question: "", 
-    //   answers: [
-    //     "", 
-    //     "", 
-    //     "", 
-    //     ""],
-    //   correctAnswer: "",
-    //   explanation: "",
-    //   image: require("./../assets/slow.png")
-    // },
-        // {id: , 
-    //   question: "", 
-    //   answers: [
-    //     "", 
-    //     "", 
-    //     "", 
-    //     ""],
-    //   correctAnswer: "",
-    //   explanation: "",
-    //   image: require("./../assets/slow.png")
-    // },
-        // {id: , 
-    //   question: "", 
-    //   answers: [
-    //     "", 
-    //     "", 
-    //     "", 
-    //     ""],
-    //   correctAnswer: "",
-    //   explanation: "",
-    //   image: require("./../assets/slow.png")
-    // },
-        // {id: , 
-    //   question: "", 
-    //   answers: [
-    //     "", 
-    //     "", 
-    //     "", 
-    //     ""],
-    //   correctAnswer: "",
-    //   explanation: "",
-    //   image: require("./../assets/slow.png")
-    // },
+        {id: 35, 
+      question: "What does this sign mean?", 
+      answers: [
+        "Construction work one kilometre ahead", 
+        "Follow detour marker until you return to regular route", 
+        "Keep a certain distance away", 
+        "Closed lane; merge with traffic"],
+      correctAnswer: "Follow detour marker until you return to regular route",
+      explanation: "",
+      image: require("./../assets/detour.png")
+    },
+        {id: 36, 
+      question: "What does this road sign mean?", 
+      answers: [
+        "A school area is ahead", 
+        "You have the right-of-way", 
+        "You must give the right-of-way", 
+        "A railway crossing is ahead"],
+      correctAnswer: "You must give the right-of-way",
+      explanation: "",
+      image: require("./../assets/right-of-way.png")
+    },
+        {id: 37, 
+      question: "What does this road sign mean?", 
+      answers: [
+        "Hills", 
+        "Hospital", 
+        "Housing", 
+        "Horse racing"],
+      correctAnswer: "Hospital",
+      explanation: "",
+      image: require("./../assets/hospital.png")
+    },
+        {id: 38, 
+      question: "What does this road sign mean?", 
+      answers: [
+        "No parking", 
+        "No bicycles allowed on this road", 
+        "Bicycles allowed on this road", 
+        "No stopping"],
+      correctAnswer: "No bicycles allowed on this road",
+      explanation: "",
+      image: require("./../assets/bicycle.png")
+    },
+        {id: 39, 
+      question: "What does this road sign mean?", 
+      answers: [
+        "Air show ahead", 
+        "Airplane landing", 
+        "Route to airport", 
+        "None of the above"],
+      correctAnswer: "Route to airport",
+      explanation: "",
+      image: require("./../assets/airport.png")
+    },
+        {id: 40, 
+      question: "This image indicates", 
+      answers: [
+        "A warning sign", 
+        "A regulatory sign", 
+        "A sign for temporary conditions", 
+        "A sign for information and direction"],
+      correctAnswer: "A regulatory sign",
+      explanation: "",
+      image: require("./../assets/regulatory.png")
+    },
         // {id: , 
     //   question: "", 
     //   answers: [

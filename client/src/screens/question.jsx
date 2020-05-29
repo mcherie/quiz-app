@@ -8,7 +8,7 @@ import { listOfQuestions } from "../assets/listOfQuestions"
 export const QuestionScreen = ({navigation}) => {
 
   const [questions, setQuestions] = useState([])
-  const [activeQuestion, setActiveQuestion] = useState(18)
+  const [activeQuestion, setActiveQuestion] = useState(36)
 
   useEffect(() => {
     // fetch("http://192.168.0.12:5000/question")
